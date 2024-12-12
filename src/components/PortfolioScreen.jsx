@@ -140,7 +140,7 @@ const PortfolioScreen = () => {
               </p>
             </div>
 
-            {/* Projects Grid */}
+            {/* Projects Grid with mobile-first display */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.map((project, index) => (
                 <div 
@@ -148,16 +148,15 @@ const PortfolioScreen = () => {
                   onClick={() => setShowModal(true)}
                   className="group relative overflow-hidden rounded-xl bg-[#353849] hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer"
                 >
-                  {/* Project Image */}
                   <div className="relative h-[300px] overflow-hidden">
                     <img 
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover transform md:group-hover:scale-110 transition-transform duration-500"
                     />
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2A2D3E] to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                      <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    {/* Mobile-first display for project info */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2A2D3E] to-transparent md:opacity-0 opacity-90 md:group-hover:opacity-90 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-8 transform md:translate-y-full md:group-hover:translate-y-0 translate-y-0 transition-transform duration-300">
                         <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
                         <p className="text-gray-300 mb-4">{project.description}</p>
                         <div className="flex flex-wrap gap-2 mb-4">
@@ -195,8 +194,8 @@ const PortfolioScreen = () => {
         </div>
       </main>
 
-      {/* Blog Section */}
-      <section className="relative z-10 py-32">
+      {/* Blog Section with reduced spacing */}
+      <section className="relative z-10 py-16">
         <div className="max-w-[1920px] mx-auto px-4 md:px-32 lg:px-64">
           {/* Blog Title */}
           <div className="text-center space-y-4 mb-16">
@@ -288,22 +287,11 @@ const PortfolioScreen = () => {
               </Link>
             ))}
           </div>
-
-          {/* View All Posts Button */}
-          <div className="text-center mt-12">
-            <Link 
-              to="/blog"
-              className="inline-flex items-center gap-2 bg-[#353849] text-white px-8 py-4 rounded-xl hover:bg-[#2A2D3E] transition-all duration-300"
-            >
-              <span>View All Posts</span>
-              <i className="fas fa-arrow-right"></i>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* After the Blog Section, add the CTA Section */}
-      <section className="relative z-10 py-32 bg-gradient-to-b from-[#2A2D3E] to-[#353849]">
+      {/* CTA Section with reduced top spacing */}
+      <section className="relative z-10 py-16 bg-gradient-to-b from-[#2A2D3E] to-[#353849]">
         <div className="max-w-[1920px] mx-auto px-4 md:px-32 lg:px-64">
           {/* CTA Container */}
           <div className="relative bg-[#353849] rounded-3xl p-8 md:p-16 overflow-hidden">
