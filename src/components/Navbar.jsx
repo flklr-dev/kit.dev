@@ -16,13 +16,13 @@ const Navbar = () => {
           <Link to="/contact" className="text-white hover:text-[#E5B075]">Contact</Link>
           
           <div className="flex items-center gap-6">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075]">
+            <a href="https://facebook.com/kitadrian31" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075]">
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="mailto:example@email.com" className="text-white hover:text-[#E5B075]">
+            <a href="mailto:kitadriand@gmail.com" className="text-white hover:text-[#E5B075]">
               <i className="fas fa-envelope"></i>
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075]">
+            <a href="https://github.com/flklr-dev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075]">
               <i className="fab fa-github"></i>
             </a>
           </div>

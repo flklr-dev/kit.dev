@@ -1,6 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactScreen = () => {
+  // Add state for form and modal
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Handle input changes
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_iay6ykn', // Replace with your EmailJS service ID
+        'template_1e2x2sp', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Kit Adrian', // Your name
+          to_email: 'kitadriand@gmail.com' // Your email
+        },
+        'rhLE6ZjaWkZiDw7w4' // Replace with your EmailJS public key
+      );
+
+      if (result.status === 200) {
+        setModalContent({
+          type: 'success',
+          message: 'Message sent successfully! I will get back to you soon.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      }
+    } catch (error) {
+      setModalContent({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+      setShowModal(true);
+    }
+  };
+
+  // Add this inside your return statement, right after the main content div
+  const Modal = () => (
+    <div className={`fixed inset-0 z-50 flex items-center justify-center ${showModal ? 'visible' : 'invisible'}`}>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowModal(false)}></div>
+      <div className="relative bg-[#353849] rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+        <div className={`text-center space-y-4 ${modalContent.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+          <div className="text-5xl mb-4">
+            {modalContent.type === 'success' ? '✓' : '✕'}
+          </div>
+          <h3 className="text-2xl font-bold text-white">
+            {modalContent.type === 'success' ? 'Success!' : 'Error'}
+          </h3>
+          <p className="text-gray-300">{modalContent.message}</p>
+          <button
+            onClick={() => setShowModal(false)}
+            className="mt-6 bg-[#E5B075] text-white px-8 py-3 rounded-xl hover:bg-[#d39a60] transition-all duration-300"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Update the form element with the new handlers
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -35,11 +116,14 @@ const ContactScreen = () => {
               {/* Contact Form */}
               <div className="md:col-span-2">
                 <div className="bg-[#353849]/50 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl border border-white/5">
-                  <form className="space-y-8">
+                  <form onSubmit={handleSubmit} className="space-y-8">
                     {/* Name Input */}
                     <div className="group relative">
                       <input 
                         type="text" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         required
                         className="w-full bg-[#2A2D3E] rounded-xl px-6 py-4 outline-none border-2 border-transparent focus:border-[#E5B075] transition-all duration-300 peer"
                         placeholder=" "
@@ -53,6 +137,9 @@ const ContactScreen = () => {
                     <div className="group relative">
                       <input 
                         type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                         className="w-full bg-[#2A2D3E] rounded-xl px-6 py-4 outline-none border-2 border-transparent focus:border-[#E5B075] transition-all duration-300 peer"
                         placeholder=" "
@@ -65,6 +152,9 @@ const ContactScreen = () => {
                     {/* Message Input */}
                     <div className="group relative">
                       <textarea 
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         required
                         rows="6"
                         className="w-full bg-[#2A2D3E] rounded-xl px-6 py-4 outline-none border-2 border-transparent focus:border-[#E5B075] transition-all duration-300 resize-none peer"
@@ -78,9 +168,12 @@ const ContactScreen = () => {
                     {/* Submit Button */}
                     <button 
                       type="submit"
-                      className="w-full bg-[#E5B075] text-white py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 group"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#E5B075] text-white py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <span className="text-xl">Send Message</span>
+                      <span className="text-xl">
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                      </span>
                       <i className="fas fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
                     </button>
                   </form>
@@ -146,6 +239,9 @@ const ContactScreen = () => {
           </div>
         </div>
       </main>
+
+      {/* Add the Modal component */}
+      <Modal />
     </div>
   );
 };

@@ -134,7 +134,7 @@ const PortfolioScreen = () => {
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2A2D3E] to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 className="text-2xl font-bold text-[#E5B075] mb-2">{project.title}</h3>
+                        <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
                         <p className="text-gray-300 mb-4">{project.description}</p>
                         <div className="flex flex-wrap gap-2 mb-4">
                           {project.tags.map((tag, tagIndex) => (
@@ -311,14 +311,12 @@ const PortfolioScreen = () => {
                   <span>Get in Touch</span>
                   <i className="fas fa-arrow-right"></i>
                 </Link>
-                <a 
-                  href="/resume.pdf" 
-                  target="_blank"
-                  className="bg-[#2A2D3E] text-white px-8 py-4 rounded-xl hover:bg-[#353849] transition-all duration-300 flex items-center gap-3"
+                <Link 
+                  to="/resume" 
+                  className="bg-[#E5B075] text-white px-8 py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300"
                 >
-                  <span>View Resume</span>
-                  <i className="fas fa-file-alt"></i>
-                </a>
+                  View Resume
+                </Link>
               </div>
 
               {/* Quick Links */}
