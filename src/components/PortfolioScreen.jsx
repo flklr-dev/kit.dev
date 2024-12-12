@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 const PortfolioScreen = () => {
+  const [showModal, setShowModal] = useState(false);
+  
+  const UnavailableModal = () => (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
+      <div className="bg-[#353849] p-6 rounded-xl shadow-xl max-w-md w-full">
+        <h3 className="text-xl font-bold text-[#E5B075] mb-4">Feature Unavailable</h3>
+        <p className="text-gray-300 mb-6">This feature is not available at the moment. Please check back later!</p>
+        <button 
+          onClick={() => setShowModal(false)}
+          className="bg-[#E5B075] text-white px-4 py-2 rounded-lg hover:bg-[#d39a60] transition-all duration-300"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+
+  const handleLinkClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setShowModal(true);
+  };
+
   const { id } = useParams();
   const projects = [
     {
@@ -90,6 +113,7 @@ const PortfolioScreen = () => {
 
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden">
+      {showModal && <UnavailableModal />}
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-[500px] h-[500px] bg-[#E5B075] rounded-full blur-[150px] opacity-20 animate-pulse -top-20 -right-20"></div>
@@ -119,10 +143,10 @@ const PortfolioScreen = () => {
             {/* Projects Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.map((project, index) => (
-                <Link 
-                  to={`/portfolio/${project.id}`} 
+                <div 
                   key={index} 
-                  className="group relative overflow-hidden rounded-xl bg-[#353849] hover:transform hover:scale-[1.02] transition-all duration-300"
+                  onClick={() => setShowModal(true)}
+                  className="group relative overflow-hidden rounded-xl bg-[#353849] hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer"
                 >
                   {/* Project Image */}
                   <div className="relative h-[300px] overflow-hidden">
@@ -145,21 +169,17 @@ const PortfolioScreen = () => {
                         </div>
                         <div className="flex items-center gap-4">
                           <a 
-                            href={project.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
+                            href="#" 
+                            onClick={handleLinkClick}
                             className="text-[#E5B075] hover:text-[#d39a60] transition-colors"
-                            onClick={(e) => e.stopPropagation()}
                           >
                             <i className="fas fa-external-link-alt mr-2"></i>
                             Live Demo
                           </a>
                           <a 
-                            href={project.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
+                            href="#" 
+                            onClick={handleLinkClick}
                             className="text-[#8E9AEB] hover:text-[#7a84d3] transition-colors"
-                            onClick={(e) => e.stopPropagation()}
                           >
                             <i className="fab fa-github mr-2"></i>
                             View Code
@@ -168,7 +188,7 @@ const PortfolioScreen = () => {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
