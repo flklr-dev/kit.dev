@@ -281,6 +281,91 @@ const PortfolioScreen = () => {
           </div>
         </div>
       </section>
+
+      {/* After the Blog Section, add the CTA Section */}
+      <section className="relative z-10 py-32 bg-gradient-to-b from-[#2A2D3E] to-[#353849]">
+        <div className="max-w-[1920px] mx-auto px-4 md:px-32 lg:px-64">
+          {/* CTA Container */}
+          <div className="relative bg-[#353849] rounded-3xl p-8 md:p-16 overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute w-[300px] h-[300px] bg-[#E5B075] rounded-full blur-[100px] opacity-20 animate-pulse -top-20 -right-20"></div>
+              <div className="absolute w-[250px] h-[250px] bg-[#8E9AEB] rounded-full blur-[100px] opacity-20 animate-pulse bottom-0 left-0"></div>
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 text-center space-y-8">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                Let's Create Something <span className="text-[#E5B075]">Amazing</span> Together
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Whether you're looking to build a new project, need technical expertise, or just want to connect, I'm here to help turn your ideas into reality.
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap justify-center gap-6 mt-12">
+                <Link 
+                  to="/contact" 
+                  className="bg-[#E5B075] text-white px-8 py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300 flex items-center gap-3"
+                >
+                  <span>Get in Touch</span>
+                  <i className="fas fa-arrow-right"></i>
+                </Link>
+                <a 
+                  href="/resume.pdf" 
+                  target="_blank"
+                  className="bg-[#2A2D3E] text-white px-8 py-4 rounded-xl hover:bg-[#353849] transition-all duration-300 flex items-center gap-3"
+                >
+                  <span>View Resume</span>
+                  <i className="fas fa-file-alt"></i>
+                </a>
+              </div>
+
+              {/* Quick Links */}
+              <div className="flex justify-center gap-8 mt-12">
+                <a 
+                  href="https://github.com/yourusername" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#E5B075] transition-colors"
+                >
+                  <i className="fab fa-github text-2xl"></i>
+                </a>
+                <a 
+                  href="https://linkedin.com/in/yourusername" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#E5B075] transition-colors"
+                >
+                  <i className="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a 
+                  href="mailto:your.email@example.com"
+                  className="text-gray-400 hover:text-[#E5B075] transition-colors"
+                >
+                  <i className="fas fa-envelope text-2xl"></i>
+                </a>
+              </div>
+
+              {/* Additional Info */}
+              <div className="flex flex-wrap justify-center gap-8 mt-12 text-gray-400">
+                <div className="flex items-center gap-2">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <span>Available for Remote Work</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="fas fa-clock"></i>
+                  <span>Quick Response Time</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="fas fa-check-circle"></i>
+                  <span>Open to Collaborations</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

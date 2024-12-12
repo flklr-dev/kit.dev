@@ -1,7 +1,19 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import { useNavigate } from 'react-router-dom';
 
 const HomeScreen = () => {
+  const navigate = useNavigate();
+
+  // Navigation functions
+  const handleLearnMore = () => {
+    navigate('/about');
+  };
+
+  const handleContact = () => {
+    navigate('/contact');
+  };
+
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden px-4 md:px-8 lg:px-16">
       {/* Main Background Circles */}
@@ -73,7 +85,10 @@ const HomeScreen = () => {
               />
             </h2>
             <div className="flex justify-center mt-12">
-              <button className="bg-[#E5B075] text-white px-16 py-5 rounded-md hover:bg-[#d39a60] transition-colors text-xl md:text-2xl">
+              <button 
+                onClick={handleLearnMore}
+                className="bg-[#E5B075] text-white px-14 py-4 rounded-md hover:bg-[#d39a60] transition-all duration-300 text-xl md:text-2xl transform hover:scale-[1.03]"
+              >
                 Learn More
               </button>
             </div>
@@ -258,7 +273,10 @@ const HomeScreen = () => {
               </p>
               
               <div className="flex flex-wrap gap-6 justify-center items-center mt-12">
-                <button className="bg-[#E5B075] text-white px-8 py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300 transform hover:scale-105 flex items-center gap-3">
+                <button 
+                  onClick={handleContact}
+                  className="bg-[#E5B075] text-white px-8 py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300 transform hover:scale-[1.03] flex items-center gap-3"
+                >
                   <span className="text-xl">Let's Talk</span>
                   <i className="fas fa-arrow-right"></i>
                 </button>

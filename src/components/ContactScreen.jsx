@@ -122,7 +122,7 @@ const ContactScreen = () => {
                 <a href="https://github.com/flklr-dev" target="_blank" rel="noopener noreferrer" 
                     className="flex items-center gap-3 p-4 bg-[#2A2D3E] rounded-xl text-white hover:text-[#E5B075] transition-all duration-300 hover:scale-105 whitespace-nowrap">
                     <i className="fab fa-github text-2xl"></i>
-                    <span>GitHub</span>
+                    <span>Gh</span>
                 </a>
                 <a href="https://www.linkedin.com/in/kit-adrian-diocares-349a20338/" target="_blank" rel="noopener noreferrer" 
                     className="flex items-center gap-3 p-4 bg-[#2A2D3E] rounded-xl text-white hover:text-[#E5B075] transition-all duration-300 hover:scale-105 whitespace-nowrap">
@@ -132,12 +132,12 @@ const ContactScreen = () => {
                 <a href="https://www.facebook.com/kitadriandiocares31" target="_blank" rel="noopener noreferrer" 
                     className="flex items-center gap-3 p-4 bg-[#2A2D3E] rounded-xl text-white hover:text-[#E5B075] transition-all duration-300 hover:scale-105 whitespace-nowrap">
                     <i className="fab fa-facebook text-2xl"></i>
-                    <span>FB</span>
+                    <span>Fb</span>
                 </a>
                 <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" 
                     className="flex items-center gap-3 p-4 bg-[#2A2D3E] rounded-xl text-white hover:text-[#E5B075] transition-all duration-300 hover:scale-105 whitespace-nowrap">
                     <i className="fab fa-instagram text-2xl"></i>
-                    <span>IG</span>
+                    <span>Ig</span>
                 </a>
                 </div>
             </div>
