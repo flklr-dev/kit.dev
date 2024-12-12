@@ -489,16 +489,16 @@ const AboutMe = () => {
                   </Link>
                   
                   <div className="flex items-center gap-6">
-                    <a href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
+                    <a href="https://facebook.com/kitadrian31" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
                       <i className="fab fa-facebook text-2xl"></i>
                     </a>
-                    <a href="mailto:your.email@example.com" className="text-white hover:text-[#E5B075] transition-colors">
+                    <a href="mailto:kitadriand@gmail.com" className="text-white hover:text-[#E5B075] transition-colors">
                       <i className="fas fa-envelope text-2xl"></i>
                     </a>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
+                    <a href="https://github.com/flklr-dev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
                       <i className="fab fa-github text-2xl"></i>
                     </a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
+                    <a href="https://linkedin.com/in/kit-adrian-diocares-349a20338/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
                       <i className="fab fa-linkedin text-2xl"></i>
                     </a>
                   </div>
@@ -511,7 +511,7 @@ const AboutMe = () => {
                     <div className="text-gray-400">BSIT Student</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-[#8E9AEB]">10+</div>
+                    <div className="text-3xl font-bold text-[#8E9AEB]">20+</div>
                     <div className="text-gray-400">Projects</div>
                   </div>
                   <div>
@@ -519,7 +519,7 @@ const AboutMe = () => {
                     <div className="text-gray-400">Certifications</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-[#8E9AEB]">2+</div>
+                    <div className="text-3xl font-bold text-[#8E9AEB]">3+</div>
                     <div className="text-gray-400">Years Coding</div>
                   </div>
                 </div>
