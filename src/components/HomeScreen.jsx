@@ -1,10 +1,33 @@
 import React from 'react';
-import { TypeAnimation } from 'react-type-animation';
 import { useNavigate } from 'react-router-dom';
 import kitImg from '../assets/kit.jpg';
 
 const HomeScreen = () => {
   const navigate = useNavigate();
+
+  // Typing effect for 'Frontend Developer'
+  const fullText = 'Frontend Developer';
+  const [typedText, setTypedText] = React.useState('');
+  const [showCursor, setShowCursor] = React.useState(true);
+
+  React.useEffect(() => {
+    let current = 0;
+    const typing = setInterval(() => {
+      setTypedText(fullText.slice(0, current + 1));
+      current++;
+      if (current === fullText.length) {
+        clearInterval(typing);
+      }
+    }, 80);
+    return () => clearInterval(typing);
+  }, []);
+
+  React.useEffect(() => {
+    const cursorBlink = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(cursorBlink);
+  }, []);
 
   // Navigation functions
   const handleLearnMore = () => {
@@ -18,7 +41,7 @@ const HomeScreen = () => {
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden px-4 md:px-8 lg:px-16">
       {/* Main Background Circles */}
-      <div className="absolute -top-10 -right-10 ml-20 w-[20rem] h-[20rem] md:w-[25rem] md:h-[25rem] bg-[#8E9AEB] rounded-full opacity-20"></div>
+      
       <div className="absolute -bottom-10 -left-10 mr-20 w-[20rem] h-[20rem] md:w-[25rem] md:h-[25rem] bg-white rounded-full opacity-10"></div>
       
       {/* Additional Small Circles for Hero Section */}
@@ -72,13 +95,9 @@ const HomeScreen = () => {
           <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold">
             <span className="text-[#E5B075]">Kit Adrian</span>
           </h1>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#8E9AEB]">
-            <TypeAnimation
-              sequence={['Full Stack Developer', 2000, 'UI/UX Designer', 2000]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#8E9AEB] flex items-center gap-2 min-h-[3.5rem] md:min-h-[4.5rem] lg:min-h-[5.5rem]">
+            <span>{typedText}</span>
+            <span className="text-[#8E9AEB] text-5xl md:text-6xl lg:text-7xl" style={{visibility: showCursor ? 'visible' : 'hidden'}}>|</span>
           </h2>
           <div className="flex justify-center md:justify-start mt-8">
             <button 
@@ -89,17 +108,13 @@ const HomeScreen = () => {
             </button>
           </div>
         </div>
-        {/* Right: Profile Image */}
+        {/* Right: Profile Image - Clean Large Style */}
         <div className="flex-1 flex justify-center items-center">
-          <div className="relative group">
-            <img
-              src={kitImg}
-              alt="Kit Adrian Profile"
-              className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-8 border-[#353849] shadow-2xl transition-transform duration-300 group-hover:scale-105 bg-[#353849]"
-            />
-            {/* Decorative ring */}
-            <div className="absolute -inset-2 rounded-full border-4 border-[#E5B075] opacity-40 animate-pulse"></div>
-          </div>
+          <img
+            src={kitImg}
+            alt="Kit Adrian Profile"
+            className="w-80 h-80 md:w-[26rem] md:h-[26rem] object-cover rounded-full border-[10px] border-[#E5B075] bg-[#353849] z-10"
+          />
         </div>
       </main>
 
