@@ -36,10 +36,6 @@ const HomeScreen = () => {
     navigate('/about');
   };
 
-  const handleContact = () => {
-    navigate('/contact');
-  };
-
   // Project fade-in animation hook
   function useFadeInOnScroll() {
     const ref = useRef();
@@ -292,79 +288,6 @@ const HomeScreen = () => {
                 <a href="https://github.com/flklr-dev/codementor" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#8E9AEB] hover:underline text-lg font-semibold mt-2">
                   <i className="fab fa-github text-2xl"></i> View on GitHub
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="w-full py-32 relative z-10">
-        <div className="max-w-[1920px] mx-auto">
-          {/* Background Elements */}
-          <div className="absolute top-0 left-0 w-32 h-32 bg-[#E5B075] rounded-full blur-[100px] opacity-20"></div>
-          <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#8E9AEB] rounded-full blur-[100px] opacity-20"></div>
-          
-          <div className="relative bg-[#353849] rounded-3xl p-12 md:p-20 overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#E5B075] rounded-full blur-[100px] opacity-10"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#8E9AEB] rounded-full blur-[100px] opacity-10"></div>
-            
-            <div className="relative z-10 text-center max-w-3xl mx-auto space-y-8">
-              <div className="text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                  Let's Create Something
-                  <span className="text-[#E5B075]"> Amazing </span>
-                  Together
-                </h2>
-                <div className="h-1 w-20 bg-[#E5B075] mx-auto rounded-full"></div>
-              </div>
-              
-              <p className="text-xl md:text-2xl text-gray-300">
-                Have a project in mind? I'm always open to discussing new projects 
-                and creative ideas.
-              </p>
-              
-              <div className="flex flex-wrap gap-6 justify-center items-center mt-12">
-                <button 
-                  onClick={handleContact}
-                  className="bg-[#E5B075] text-white px-8 py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300 transform hover:scale-[1.03] flex items-center gap-3"
-                >
-                  <span className="text-xl">Let's Talk</span>
-                  <i className="fas fa-arrow-right"></i>
-                </button>
-                
-                <div className="flex items-center gap-6">
-                  <a href="mailto:example@email.com" className="text-white hover:text-[#E5B075] transition-colors">
-                    <i className="fas fa-envelope text-2xl"></i>
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
-                    <i className="fab fa-linkedin text-2xl"></i>
-                  </a>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#E5B075] transition-colors">
-                    <i className="fab fa-github text-2xl"></i>
-                  </a>
-                </div>
-              </div>
-
-              {/* Optional: Add some stats or social proof */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-[#E5B075]">3</div>
-                  <div className="text-gray-400">Years Experience</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#8E9AEB]">10+</div>
-                  <div className="text-gray-400">Projects Completed</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#E5B075]">5+</div>
-                  <div className="text-gray-400">Happy Clients</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#8E9AEB]">98.7%</div>
-                  <div className="text-gray-400">Satisfaction</div>
-                </div>
               </div>
             </div>
           </div>
