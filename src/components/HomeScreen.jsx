@@ -1,6 +1,7 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { useNavigate } from 'react-router-dom';
+import kitImg from '../assets/kit.jpg';
 
 const HomeScreen = () => {
   const navigate = useNavigate();
@@ -63,35 +64,41 @@ const HomeScreen = () => {
       <div className="absolute top-[55vh] left-16 w-4 h-4 bg-[#8E9AEB] rounded-full opacity-15"></div>
       <div className="absolute top-[70vh] left-28 w-2 h-2 bg-[#E5B075] rounded-full opacity-20"></div>
 
-      {/* Main Content - Adjusted margins */}
-      <main className="w-full h-screen flex items-center justify-center mt-14 -mb-10">
-        <div className="w-full max-w-[1920px]">
-          <div className="space-y-6 md:space-y-8 lg:space-y-10 text-center px-4 md:px-32 lg:px-64">
-            <p className="text-3xl md:text-4xl lg:text-5xl text-white">Hi! It's me,</p>
-            <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold">
-              <span className="text-[#E5B075]">Kit Adrian</span>
-            </h1>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#8E9AEB]">
-              <TypeAnimation
-                sequence={[
-                  'Full Stack Developer',
-                  2000,
-                  'UI/UX Designer',
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
-            </h2>
-            <div className="flex justify-center mt-12">
-              <button 
-                onClick={handleLearnMore}
-                className="bg-[#E5B075] text-white px-14 py-4 rounded-md hover:bg-[#d39a60] transition-all duration-300 text-xl md:text-2xl transform hover:scale-[1.03]"
-              >
-                Learn More
-              </button>
-            </div>
+      {/* Main Content - Hero Section Redesigned */}
+      <main className="w-full h-screen flex flex-col md:flex-row items-center justify-center mt-14 -mb-10 gap-10 md:gap-0">
+        {/* Left: Text Content */}
+        <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6 md:space-y-8 lg:space-y-10 px-4 md:px-0">
+          <p className="text-3xl md:text-4xl lg:text-5xl text-white">Hi! It&apos;s me,</p>
+          <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold">
+            <span className="text-[#E5B075]">Kit Adrian</span>
+          </h1>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#8E9AEB]">
+            <TypeAnimation
+              sequence={['Full Stack Developer', 2000, 'UI/UX Designer', 2000]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h2>
+          <div className="flex justify-center md:justify-start mt-8">
+            <button 
+              onClick={handleLearnMore}
+              className="bg-[#E5B075] text-white px-10 py-3 rounded-md hover:bg-[#d39a60] transition-all duration-300 text-lg md:text-xl transform hover:scale-[1.03] shadow-lg"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+        {/* Right: Profile Image */}
+        <div className="flex-1 flex justify-center items-center">
+          <div className="relative group">
+            <img
+              src={kitImg}
+              alt="Kit Adrian Profile"
+              className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-8 border-[#353849] shadow-2xl transition-transform duration-300 group-hover:scale-105 bg-[#353849]"
+            />
+            {/* Decorative ring */}
+            <div className="absolute -inset-2 rounded-full border-4 border-[#E5B075] opacity-40 animate-pulse"></div>
           </div>
         </div>
       </main>
