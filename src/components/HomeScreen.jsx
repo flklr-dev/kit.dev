@@ -4,6 +4,7 @@ import kitImg from '../assets/kit.jpg';
 import fintechImg from '../assets/images/fintech.jpg';
 import codementorImg from '../assets/images/codementor.jpg';
 import pantrypalsImg from '../assets/images/pantrypals.jpg';
+import hradminImg from '../assets/images/hradmin.png';
 
 const HomeScreen = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ const HomeScreen = () => {
   const [fintechRef, fintechVisible] = useFadeInOnScroll();
   const [cmRef, cmVisible] = useFadeInOnScroll();
   const [pantryRef, pantryVisible] = useFadeInOnScroll();
+  const [hradminRef, hradminVisible] = useFadeInOnScroll();
 
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden px-4 md:px-8 lg:px-16">
@@ -218,7 +220,7 @@ const HomeScreen = () => {
                 <img 
                   src={fintechImg}
                   alt="Fintech App Preview"
-                  className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-4 border-[#8E9AEB]"
+                  className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-2 border-[#8E9AEB]"
                   style={{maxWidth: '100%', height: 'auto'}}
                 />
               </div>
@@ -260,7 +262,7 @@ const HomeScreen = () => {
                 <img 
                   src={codementorImg}
                   alt="CodeMentor App Preview"
-                  className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-4 border-[#E5B075]"
+                  className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-2 border-[#E5B075]"
                   style={{maxWidth: '100%', height: 'auto'}}
                 />
               </div>
@@ -302,7 +304,7 @@ const HomeScreen = () => {
                 <img
                   src={pantrypalsImg}
                   alt="PantryPals App Preview"
-                  className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-4 border-[#FF9800]"
+                  className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-2 border-[#FF9800]"
                   style={{maxWidth: '100%', height: 'auto'}}
                 />
               </div>
@@ -330,6 +332,39 @@ const HomeScreen = () => {
                   </span>
                 </div>
                 <a href="https://github.com/flklr-dev/pantrypals" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#8E9AEB] hover:underline text-lg font-semibold mt-2">
+                  <i className="fab fa-github text-2xl"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+            {/* Project 4: HR Admin Management Dashboard */}
+            <div
+              ref={hradminRef}
+              className={`flex flex-col md:flex-row-reverse items-center justify-end gap-8 md:mr-24 transition-all duration-700 ease-out ${hradminVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+            >
+              {/* Image right, website style */}
+              <div className="flex-1 flex justify-start">
+                <img
+                  src={hradminImg}
+                  alt="HR Admin Management Dashboard Preview"
+                  className="w-full max-w-[900px] h-auto object-cover rounded-2xl shadow-lg border-2 border-[#C084FC] bg-[#18122B]"
+                  style={{aspectRatio: '16/7', minWidth: '800px'}}
+                />
+              </div>
+              {/* Description left, larger and more left-aligned */}
+              <div className="flex-[1.5] flex flex-col justify-center items-end gap-6 max-w-2xl mr-4 md:mr-12 text-right">
+                <h3 className="text-3xl md:text-4xl font-bold text-[#E5B075] mb-2">HR Admin Management Dashboard</h3>
+                <p className="text-base md:text-lg lg:text-l text-white leading-relaxed">
+                  This project is a modern, interactive HR Admin Management Dashboard designed to streamline and visualize core human resources and project management operations for organizations.
+                </p>
+                <div className="flex flex-wrap gap-3 items-center justify-end mt-2">
+                  <span className="flex items-center gap-2 px-4 py-2 bg-[#22243a] rounded-full text-sm font-semibold text-[#61DAFB] border border-[#61DAFB]">
+                    <i className="fab fa-react"></i> React.js
+                  </span>
+                  <span className="flex items-center gap-2 px-4 py-2 bg-[#22243a] rounded-full text-sm font-semibold text-[#FBBF24] border border-[#FBBF24]">
+                    <i className="fas fa-bolt"></i> Vite
+                  </span>
+                </div>
+                <a href="https://github.com/flklr-dev/hr-admin-management" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#8E9AEB] hover:underline text-lg font-semibold mt-2">
                   <i className="fab fa-github text-2xl"></i> View on GitHub
                 </a>
               </div>
