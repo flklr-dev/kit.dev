@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import kitImg from '../assets/kit.jpg';
 import fintechImg from '../assets/images/fintech.jpg';
 import codementorImg from '../assets/images/codementor.jpg';
+import pantrypalsImg from '../assets/images/pantrypals.jpg';
 
 const HomeScreen = () => {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ const HomeScreen = () => {
   // Fade-in hooks for each project
   const [fintechRef, fintechVisible] = useFadeInOnScroll();
   const [cmRef, cmVisible] = useFadeInOnScroll();
+  const [pantryRef, pantryVisible] = useFadeInOnScroll();
 
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden px-4 md:px-8 lg:px-16">
@@ -96,21 +98,21 @@ const HomeScreen = () => {
         {/* Left: Text Content */}
         <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6 md:space-y-8 lg:space-y-10 px-4 md:px-0">
           <p className="text-3xl md:text-4xl lg:text-5xl text-white">Hi! It&apos;s me,</p>
-          <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold">
-            <span className="text-[#E5B075]">Kit Adrian</span>
-          </h1>
+            <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold">
+              <span className="text-[#E5B075]">Kit Adrian</span>
+            </h1>
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#8E9AEB] flex items-center gap-2 min-h-[3.5rem] md:min-h-[4.5rem] lg:min-h-[5.5rem]">
             <span>{typedText}</span>
             <span className="text-[#8E9AEB] text-5xl md:text-6xl lg:text-7xl" style={{visibility: showCursor ? 'visible' : 'hidden'}}>|</span>
-          </h2>
+            </h2>
           <div className="flex justify-center md:justify-start mt-8">
-            <button 
-              onClick={handleLearnMore}
+              <button 
+                onClick={handleLearnMore}
               className="bg-[#E5B075] text-white px-10 py-3 rounded-md hover:bg-[#d39a60] transition-all duration-300 text-lg md:text-xl transform hover:scale-[1.03] shadow-lg"
-            >
+              >
               Download CV
-            </button>
-          </div>
+              </button>
+            </div>
         </div>
         {/* Right: Profile Image - Clean Large Style */}
         <div className="flex-1 flex flex-col items-center justify-center">
@@ -213,7 +215,7 @@ const HomeScreen = () => {
             >
               {/* Image left, smaller */}
               <div className="flex-1 flex justify-end pr-8 md:pr-16">
-                <img
+                <img 
                   src={fintechImg}
                   alt="Fintech App Preview"
                   className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-4 border-[#8E9AEB]"
@@ -255,7 +257,7 @@ const HomeScreen = () => {
             >
               {/* Image right, smaller */}
               <div className="flex-1 flex justify-start pl-8 md:pl-16">
-                <img
+                <img 
                   src={codementorImg}
                   alt="CodeMentor App Preview"
                   className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-4 border-[#E5B075]"
@@ -286,6 +288,48 @@ const HomeScreen = () => {
                   </span>
                 </div>
                 <a href="https://github.com/flklr-dev/codementor" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#8E9AEB] hover:underline text-lg font-semibold mt-2">
+                  <i className="fab fa-github text-2xl"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+            {/* Project 3: PantryPals */}
+            <div
+              ref={pantryRef}
+              className={`flex flex-col md:flex-row items-center justify-end gap-20 transition-all duration-700 ease-out ${pantryVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+            >
+              {/* Image left, smaller */}
+              <div className="flex-1 flex justify-end pr-8 md:pr-16">
+                <img
+                  src={pantrypalsImg}
+                  alt="PantryPals App Preview"
+                  className="w-[220px] h-[440px] md:w-[260px] md:h-[520px] object-cover rounded-2xl shadow-lg border-4 border-[#FF9800]"
+                  style={{maxWidth: '100%', height: 'auto'}}
+                />
+              </div>
+              {/* Description right, larger and more right-aligned */}
+              <div className="flex-[1.5] flex flex-col justify-center items-start gap-6 max-w-2xl ml-4 md:ml-12">
+                <h3 className="text-3xl md:text-4xl font-bold text-[#E5B075] mb-2">PantryPals</h3>
+                <p className="text-base md:text-lg lg:text-l text-white leading-relaxed">
+                  PantryPals is a mobile app for discovering, sharing, and managing recipes. Users can explore trending dishes, organize their own collections, plan meals, and connect with a vibrant food community.
+                </p>
+                <div className="flex flex-wrap gap-3 items-center mt-2">
+                  <span className="flex items-center gap-2 px-4 py-2 bg-[#22243a] rounded-full text-sm font-semibold text-[#61DAFB] border border-[#61DAFB]">
+                    <i className="fab fa-react"></i> React Native
+                  </span>
+                  <span className="flex items-center gap-2 px-4 py-2 bg-[#22243a] rounded-full text-sm font-semibold text-[#f3f3f3] border border-[#f3f3f3]">
+                    <i className="fab fa-js-square"></i> Expo
+                  </span>
+                  <span className="flex items-center gap-2 px-4 py-2 bg-[#22243a] rounded-full text-sm font-semibold text-[#3C873A] border border-[#3C873A]">
+                    <i className="fab fa-node-js"></i> Node.js
+                  </span>
+                  <span className="flex items-center gap-2 px-4 py-2 bg-[#22243a] rounded-full text-sm font-semibold text-[#f3f3f3] border border-[#f3f3f3]">
+                    <i className="fas fa-server"></i> Express.js
+                  </span>
+                  <span className="flex items-center gap-2 px-4 py-2 bg-[#22243a] rounded-full text-sm font-semibold text-[#47A248] border border-[#47A248]">
+                    <i className="fas fa-leaf"></i> MongoDB
+                  </span>
+                </div>
+                <a href="https://github.com/flklr-dev/pantrypals" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#8E9AEB] hover:underline text-lg font-semibold mt-2">
                   <i className="fab fa-github text-2xl"></i> View on GitHub
                 </a>
               </div>

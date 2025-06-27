@@ -18,7 +18,7 @@ const Navbar = () => {
           <a href="#projects" className="text-white hover:text-[#E5B075]">Projects</a>
           <a href="#contact">
             <button className="ml-4 px-6 py-2 bg-[#E5B075] text-[#2A2D3E] font-semibold rounded-lg shadow hover:bg-[#d39a60] transition-all duration-300">Contact Me</button>
-          </a>
+            </a>
         </div>
 
         {/* Mobile Navigation Menu */}
@@ -28,7 +28,7 @@ const Navbar = () => {
           <a href="#projects" className="text-white hover:text-[#E5B075] py-3">Projects</a>
           <a href="#contact" className="w-full flex justify-center">
             <button className="mt-4 px-6 py-2 bg-[#E5B075] text-[#2A2D3E] font-semibold rounded-lg shadow hover:bg-[#d39a60] transition-all duration-300 w-4/5">Contact Me</button>
-          </a>
+            </a>
         </div>
       </div>
     </nav>
