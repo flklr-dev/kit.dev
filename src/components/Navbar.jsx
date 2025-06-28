@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 w-full bg-[#2A2D3E] text-white px-6 md:px-12 lg:px-24 z-50">
@@ -16,9 +14,7 @@ const Navbar = () => {
           <a href="#" className="text-white hover:text-[#E5B075]">Home</a>
           <a href="#skills" className="text-white hover:text-[#E5B075] whitespace-nowrap">Skills</a>
           <a href="#projects" className="text-white hover:text-[#E5B075]">Projects</a>
-          <a href="#contact">
-            <button className="ml-4 px-6 py-2 bg-[#E5B075] text-[#2A2D3E] font-semibold rounded-lg shadow hover:bg-[#d39a60] transition-all duration-300">Contact Me</button>
-            </a>
+          <a href="#about" className="text-white hover:text-[#E5B075] whitespace-nowrap">About Me</a>
         </div>
 
         {/* Mobile Navigation Menu */}
@@ -26,9 +22,7 @@ const Navbar = () => {
           <a href="#" className="text-white hover:text-[#E5B075] py-3">Home</a>
           <a href="#skills" className="text-white hover:text-[#E5B075] py-3">Skills</a>
           <a href="#projects" className="text-white hover:text-[#E5B075] py-3">Projects</a>
-          <a href="#contact" className="w-full flex justify-center">
-            <button className="mt-4 px-6 py-2 bg-[#E5B075] text-[#2A2D3E] font-semibold rounded-lg shadow hover:bg-[#d39a60] transition-all duration-300 w-4/5">Contact Me</button>
-            </a>
+          <a href="#about" className="text-white hover:text-[#E5B075] py-3">About Me</a>
         </div>
       </div>
     </nav>

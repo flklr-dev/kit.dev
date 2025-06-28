@@ -63,37 +63,6 @@ const HomeScreen = () => {
 
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden px-4 md:px-8 lg:px-16">
-      {/* Main Background Circles */}
-      
-      <div className="absolute -bottom-10 -left-10 mr-20 w-[20rem] h-[20rem] md:w-[25rem] md:h-[25rem] bg-white rounded-full opacity-10"></div>
-      
-      {/* Additional Small Circles for Hero Section */}
-      <div className="absolute top-1/4 -left-20 w-24 h-24 md:w-32 md:h-32 bg-[#8E9AEB] rounded-full opacity-15"></div>
-      <div className="absolute bottom-1/3 -right-10 w-16 h-16 md:w-24 md:h-24 bg-white rounded-full opacity-20"></div>
-      <div className="absolute top-2/3 left-1/3 w-12 h-12 md:w-16 md:h-16 bg-[#8E9AEB] rounded-full opacity-10"></div>
-      <div className="absolute top-20 right-1/4 w-8 h-8 md:w-12 md:h-12 bg-white rounded-full opacity-15"></div>
-      
-      {/* Skills Section Circles */}
-      <div className="absolute top-[90vh] right-1/3 w-16 h-16 bg-[#E5B075] rounded-full opacity-10"></div>
-      <div className="absolute top-[95vh] left-1/4 w-24 h-24 bg-[#8E9AEB] rounded-full opacity-15"></div>
-      <div className="absolute top-[105vh] right-1/4 w-12 h-12 bg-white rounded-full opacity-20"></div>
-      <div className="absolute top-[110vh] left-1/3 w-8 h-8 bg-[#E5B075] rounded-full opacity-15"></div>
-      
-      {/* Projects Section Circles */}
-      <div className="absolute top-[150vh] left-10 w-20 h-20 bg-[#8E9AEB] rounded-full opacity-10"></div>
-      <div className="absolute top-[160vh] right-20 w-16 h-16 bg-white rounded-full opacity-15"></div>
-      <div className="absolute top-[170vh] left-1/4 w-12 h-12 bg-[#E5B075] rounded-full opacity-20"></div>
-      <div className="absolute top-[180vh] right-1/3 w-10 h-10 bg-[#8E9AEB] rounded-full opacity-15"></div>
-      <div className="absolute top-[190vh] left-1/3 w-6 h-6 bg-white rounded-full opacity-10"></div>
-      
-      {/* CTA Section Additional Circles */}
-      <div className="absolute top-[220vh] right-1/4 w-14 h-14 bg-[#E5B075] rounded-full opacity-15"></div>
-      <div className="absolute top-[230vh] left-20 w-10 h-10 bg-[#8E9AEB] rounded-full opacity-20"></div>
-      <div className="absolute top-[240vh] right-1/3 w-8 h-8 bg-white rounded-full opacity-10"></div>
-      <div className="absolute top-[245vh] left-1/4 w-12 h-12 bg-[#E5B075] rounded-full opacity-15"></div>
-      <div className="absolute top-[250vh] right-20 w-6 h-6 bg-[#8E9AEB] rounded-full opacity-20"></div>
-
-      
 
       {/* Main Content - Hero Section Redesigned */}
       <main className="w-full h-screen flex flex-col md:flex-row items-center justify-center mt-14 -mb-10 gap-10 md:gap-0 px-4 md:px-8 lg:px-16">
@@ -372,6 +341,104 @@ const HomeScreen = () => {
           </div>
         </div>
       </section>
+
+      {/* About Me Section */}
+      <section id="about" className="w-full py-20 relative z-10">
+        <div className="max-w-[1920px] mx-auto px-4 md:px-8 lg:px-16">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              About <span className="text-[#E5B075]">Me</span>
+            </h2>
+            <div className="h-1 w-20 bg-[#E5B075] mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Profile Image */}
+            <div className="flex justify-center lg:justify-start ml-24">
+              <div className="relative">
+                <img
+                  src={kitImg}
+                  alt="Kit Adrian Profile"
+                  className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl border-4 border-[#E5B075] shadow-2xl"
+                />
+                
+                </div>
+              </div>
+
+            {/* Right: About Content */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-3xl md:text-4xl font-bold text-[#E5B075]">
+                  Hello, I&apos;m Kit Adrian
+                </h3>
+                
+                <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
+                  <p>
+                    A passionate 21-year-old BSIT student at Davao Oriental State University, 
+                    currently in my fourth year of studies. I blend creativity with technical expertise 
+                    to create meaningful digital experiences.
+                  </p>
+                  
+                  <p>
+                    I can develop mobile applications with React Native and create responsive websites with React. 
+                    My expertise includes building cross-platform mobile apps and modern web applications 
+                    that deliver exceptional user experiences.
+                  </p>
+                </div>
+              </div>
+
+              {/* Quick Facts */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-[#353849] p-6 rounded-xl">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-[#8E9AEB] rounded-lg flex items-center justify-center">
+                      <i className="fas fa-graduation-cap text-xl"></i>
+                    </div>
+                    <h4 className="text-xl font-semibold">Education</h4>
+                  </div>
+                  <p className="text-gray-300">BS Information Technology</p>
+                  <p className="text-sm text-gray-400">Davao Oriental State University</p>
+                </div>
+                
+                <div className="bg-[#353849] p-6 rounded-xl">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-[#E5B075] rounded-lg flex items-center justify-center">
+                      <i className="fas fa-code text-xl"></i>
+                    </div>
+                    <h4 className="text-xl font-semibold">Specialization</h4>
+                  </div>
+                  <p className="text-gray-300">Mobile Systems & Development</p>
+                  <p className="text-sm text-gray-400">Application Development</p>
+                </div>
+              </div>
+
+              {/* Personal Tags */}
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-[#2A2D3E] rounded-full text-sm text-[#E5B075] border border-[#E5B075]">Creative Thinker</span>
+                <span className="px-4 py-2 bg-[#2A2D3E] rounded-full text-sm text-[#8E9AEB] border border-[#8E9AEB]">Problem Solver</span>
+                <span className="px-4 py-2 bg-[#2A2D3E] rounded-full text-sm text-[#E5B075] border border-[#E5B075]">Tech Enthusiast</span>
+                <span className="px-4 py-2 bg-[#2A2D3E] rounded-full text-sm text-[#8E9AEB] border border-[#8E9AEB]">Continuous Learner</span>
+              </div>
+
+              {/* Contact CTA */}
+              <div className="pt-6">
+                <a 
+                  href="#contact" 
+                  className="inline-flex items-center gap-3 bg-[#E5B075] text-white px-8 py-4 rounded-xl hover:bg-[#d39a60] transition-all duration-300 transform hover:scale-105"
+                >
+                  <span className="text-lg font-semibold">View Resume</span>
+                  <i className="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full text-center py-6 text-gray-400 text-sm border-t border-[#353849] mt-8">
+        &copy; {new Date().getFullYear()} Kit Adrian. All rights reserved.
+      </footer>
     </div>
   );
 };
