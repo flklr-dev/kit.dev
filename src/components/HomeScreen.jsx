@@ -81,7 +81,7 @@ const HomeScreen = () => {
                 onClick={handleLearnMore}
               className="bg-[#E5B075] text-white px-10 py-3 rounded-md hover:bg-[#d39a60] transition-all duration-300 text-lg md:text-xl transform hover:scale-[1.03] shadow-lg"
               >
-              Download CV
+             View Resume
               </button>
             </div>
         </div>
