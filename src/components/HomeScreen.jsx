@@ -333,9 +333,14 @@ const HomeScreen = () => {
                     <i className="fas fa-bolt"></i> Vite
                   </span>
                 </div>
-                <a href="https://github.com/flklr-dev/hr-admin-management" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#8E9AEB] hover:underline text-lg font-semibold mt-2">
-                  <i className="fab fa-github text-2xl"></i> View on GitHub
-                </a>
+                <div className="flex gap-4 mt-2">
+                  <a href="https://hr-admin-management.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#26a641] hover:underline text-lg font-semibold">
+                    <i className="fas fa-external-link-alt text-2xl"></i> Explore Demo
+                  </a>
+                  <a href="https://github.com/flklr-dev/hr-admin-management" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#8E9AEB] hover:underline text-lg font-semibold">
+                    <i className="fab fa-github text-2xl"></i> View on GitHub
+                  </a>
+                </div>
               </div>
             </div>
           </div>
