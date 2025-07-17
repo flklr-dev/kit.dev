@@ -62,6 +62,7 @@ const HomeScreen = () => {
 
   return (
     <div className="w-full min-h-screen bg-[#2A2D3E] text-white relative overflow-hidden px-4 md:px-8 lg:px-16">
+      <div id="home"></div>
 
       {/* Main Content - Hero Section Redesigned */}
       <main className="w-full h-screen flex flex-col md:flex-row items-center justify-center mt-14 -mb-10 gap-10 md:gap-0 px-4 md:px-8 lg:px-16">
