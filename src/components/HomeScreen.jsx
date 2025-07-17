@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import kitImg from '../assets/kit.jpg';
 import fintechImg from '../assets/images/fintech.jpg';
 import codementorImg from '../assets/images/codementor.jpg';
@@ -7,8 +6,6 @@ import pantrypalsImg from '../assets/images/pantrypals.jpg';
 import hradminImg from '../assets/images/hradmin.png';
 
 const HomeScreen = () => {
-  const navigate = useNavigate();
-
   // Typing effect for 'Frontend Developer'
   const fullText = 'Frontend Developer';
   const [typedText, setTypedText] = React.useState('');
@@ -34,8 +31,10 @@ const HomeScreen = () => {
   }, []);
 
   // Navigation functions
-  const handleLearnMore = () => {
-    navigate('/about');
+
+  // Function to open resume in new tab
+  const handleViewResume = () => {
+    window.open('/Kit_Adrian_Resume.pdf', '_blank', 'noopener,noreferrer');
   };
 
   // Project fade-in animation hook
@@ -78,7 +77,7 @@ const HomeScreen = () => {
             </h2>
           <div className="flex justify-center md:justify-start mt-8">
               <button 
-                onClick={handleLearnMore}
+                onClick={handleViewResume}
               className="bg-[#E5B075] text-white px-10 py-3 rounded-md hover:bg-[#d39a60] transition-all duration-300 text-lg md:text-xl transform hover:scale-[1.03] shadow-lg"
               >
              View Resume
